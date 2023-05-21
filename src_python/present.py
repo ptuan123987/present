@@ -33,6 +33,7 @@ def interpolation_search(arr, target):
     
     #select pivot
     pivot_pos = low + int((float(high - low) / (arr[high] - arr[low])) * (target - arr[low]))
+    print(pivot_pos)
     
     if arr[pivot_pos] == target:
         return pivot_pos
@@ -72,14 +73,10 @@ def jump_search(arr, target) :
     
     return jump_search(arr, target, prev+1, high)
 
-
-
-    
 def createData():
     for i in range(1, 6):    
         length = 200000000 * i
         data = [i for i in range(0, int(length), 100)]
-        
         # Open file in write mode
         with open("data.txt", "a") as f:
             f.write("\n")

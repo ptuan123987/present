@@ -17,7 +17,7 @@ var data = randomData(maxElement, dataRange);
 function setSpeed() {
     time = 1000 - document.getElementById("speed").value;
 }
-//a d3 function for scaling height for all the data this function
+// d3 function for scaling height for all the data this function
 var heightScale = d3
     .scaleLinear()
     .domain([0, d3.max(data)])
@@ -95,7 +95,7 @@ const SearchAlgo = {
                     target + " doesn't exist.";
             }
         }
-        // calling async function here
+
         search(this);
     },
     jumpSearch() {

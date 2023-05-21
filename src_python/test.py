@@ -19,23 +19,6 @@ def binary_search(arr, target) :
     return binary_search(right, target)
 
 
-def interpolation_search(arr, target ):
-    low = 0
-    high = len(arr) - 1
-    
-    if low > high or target < arr[low] or target > arr[high]:
-        return -1 
-    
-    #select pivot
-    pivot_pos = low + int((float(high - low) / (arr[high] - arr[low])) * (target - arr[low]))
-    
-    if arr[pivot_pos] == target:
-        return pivot_pos
-    
-    if arr[pivot_pos] < target:
-        return interpolation_search(arr, target, pivot_pos+1, high)
-    
-    return interpolation_search(arr, target, low, pivot_pos-1)
 
 def jump_search(arr, target) :
     low = 0
@@ -68,12 +51,30 @@ def jump_search(arr, target) :
 
 
 
+def interpolation_search(arr, target ):
+    low = 0
+    high = len(arr) - 1
+    
+    if low > high or target < arr[low] or target > arr[high]:
+        return -1 
+    
+    #select pivot
+    pivot_pos = low + int((float(high - low) / (arr[high] - arr[low])) * (target - arr[low]))
+    print(pivot_pos)
+    if arr[pivot_pos] == target:
+        return pivot_pos
+    
+    if arr[pivot_pos] < target:
+        return interpolation_search(arr, target, pivot_pos+1, high)
+    
+    return interpolation_search(arr, target, low, pivot_pos-1)
 def main() :
-    arr = [1,2,3,4,5,6]
-    postion = binary_search(arr,4)
-    postion1 = interpolation_search(arr,4)
-    postion3 = jump_search(arr,4)
-    print(postion)
+    # mid = Low + ((High - Low) / (A[High] - A[Low])) * (X - A[Low])
+    arr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18]
+    # postion = binary_search(arr,4)
+    postion1 = interpolation_search(arr,14)
+    # postion3 = jump_search(arr,4)
+    # print(postion)
     print(postion1)
-    print(postion3)
+    # print(postion3)
 main()
