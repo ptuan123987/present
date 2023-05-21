@@ -5,8 +5,7 @@ import matplotlib.pyplot as plt
 
 # pos = low + [(x - arr[low]) * (high - low) / (arr[high] - arr[low])]
 # O(log(log(n)))
-
-def binay_search(arr,target) :
+def binary_search(arr, target) :
     #base case : if arr is empty
     if (len(arr) == 0) :
         return 0
@@ -20,9 +19,9 @@ def binay_search(arr,target) :
         return middle_pos
     
     if arr[middle_pos] > target :
-        return binay_search(left, target)
+        return binary_search(left, target)
     
-    return binay_search(right, target)
+    return binary_search(right, target)
 
 
 def interpolation_search(arr, target):
@@ -73,26 +72,8 @@ def jump_search(arr, target) :
     
     return jump_search(arr, target, prev+1, high)
 
-def ternary_search(arr,target) :
-    left = 0
-    right = len(arr) - 1
-    middle_1 = int(left + (right - left) / 3)
-    middle_2 = int(right - (right - left) / 3)
-    
-    if (arr[middle_1] == target) :
-        return middle_1
-    if (arr[middle_2] == target) :
-        return middle_2
-    if (target  < arr[middle_1]) :
-        return ternary_search(arr, target, left, middle_1 - 1)
-    elif (target > arr[middle_2]) :
-        return ternary_search(arr, target, middle_2 + 1, right)
-    return ternary_search(arr, target, middle_1 - 1, middle_2 + 1)
-    
-    
-    
-    
-    
+
+
     
 def createData():
     for i in range(1, 6):    
@@ -203,7 +184,6 @@ def drawGraph(timeIS, timeJ, size):
 
 main()
 
-# Example  ahjkfgjksdhfg
 
 
 

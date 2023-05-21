@@ -57,7 +57,6 @@ const SearchAlgo = {
                 document.getElementById("foundNotice").innerHTML =
                     target + " doesn't exist.";
             }
-
             // after complete sorting complete making all the bar green 
             isSorting = false;
         }
@@ -153,13 +152,10 @@ function startSearching() {
         const jumpSearchStarted = SearchAlgo.jumpSearch.bind(SearchAlgo);
         jumpSearchStarted();
     }
-
-
 }
 
 document.getElementById("search").addEventListener("click", function() {
     target = parseInt(document.getElementById("targetValue").value);
-
     if (isNaN(target)) {
         alert("Please enter a valid number");
     } else {
@@ -172,6 +168,7 @@ document.getElementById("random-data").addEventListener("click", function() {
     var data = randomData(maxElement, dataRange);
     createChart(data);
 });
+
 document.getElementById("reset").addEventListener("click", function() {
     svg.remove();
     createChart(data)
