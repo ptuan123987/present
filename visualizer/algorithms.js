@@ -57,8 +57,7 @@ const SearchAlgo = {
                 document.getElementById("foundNotice").innerHTML =
                     target + " doesn't exist.";
             }
-            // after complete sorting complete making all the bar green 
-            isSorting = false;
+
         }
 
         // calling async function here
@@ -95,8 +94,6 @@ const SearchAlgo = {
                 document.getElementById("foundNotice").innerHTML =
                     target + " doesn't exist.";
             }
-            // after complete sorting complete making all the bar green 
-            isSorting = false;
         }
         // calling async function here
         search(this);
@@ -130,8 +127,6 @@ const SearchAlgo = {
                 document.getElementById("foundNotice").innerHTML =
                     target + " doesn't exist.";
             }
-            // after complete sorting complete making all the bar green 
-            isSorting = false;
         }
         search(this);
     },
